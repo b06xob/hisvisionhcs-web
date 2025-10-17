@@ -1,7 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using HisVisionHCS.Web.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add Entity Framework
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
+    ?? "Server=hisvision-sql-server.database.windows.net;Database=HisVisionDB;User Id=sqladmin;Password=HisVision2025!;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+
+builder.Services.AddDbContext<HisVisionDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
