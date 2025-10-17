@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "MiK+PY44/KU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Xavier\\OneDrive\\Test\\HisVisionHCS.net\\HisVisionHCS.Web\\HisVisionHCS.Web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Xavier\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\8.0.21\\microsoft.netcore.app.host.linux-x64.8.0.21.nupkg.sha512"
+  ],
+  "logs": []
+}

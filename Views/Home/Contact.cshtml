@@ -1,0 +1,217 @@
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<!-- Hero Section -->
+<section class="hero-section bg-gradient-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 fw-bold mb-4">Contact His Vision Healthcare Services</h1>
+                <p class="lead mb-4">We're here to help you find the right care solution for your loved one. Get in touch with us today.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Information -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Contact Details -->
+            <div class="col-lg-6">
+                <h2 class="display-6 fw-bold text-primary mb-4">Get In Touch</h2>
+                <p class="lead mb-4">Ready to discuss your care needs? We're here to help you every step of the way.</p>
+                
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="d-flex align-items-center p-4 bg-light rounded-3">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                                <i class="fas fa-phone text-primary" style="font-size: 1.5rem;"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Phone</h5>
+                                <p class="mb-0">
+                                    <a href="tel:4705588761" class="text-decoration-none fs-5">470.558.8761</a>
+                                </p>
+                                <small class="text-muted">Available for immediate consultation</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12">
+                        <div class="d-flex align-items-center p-4 bg-light rounded-3">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                                <i class="fas fa-envelope text-primary" style="font-size: 1.5rem;"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Email</h5>
+                                <p class="mb-0">
+                                    <a href="mailto:hisvisionhealthcare@gmail.com" class="text-decoration-none fs-5">hisvisionhealthcare@gmail.com</a>
+                                </p>
+                                <small class="text-muted">We respond within 24 hours</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12">
+                        <div class="d-flex align-items-center p-4 bg-light rounded-3">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                                <i class="fas fa-map-marker-alt text-primary" style="font-size: 1.5rem;"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Service Area</h5>
+                                <p class="mb-0 fs-5">Decatur, Georgia</p>
+                                <small class="text-muted">Serving the greater Atlanta metropolitan area</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body p-5">
+                        <h3 class="fw-bold text-primary mb-4">Send Us a Message</h3>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label fw-bold">First Name *</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label fw-bold">Last Name *</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="email" class="form-label fw-bold">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="phone" class="form-label fw-bold">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                                <div class="col-12">
+                                    <label for="subject" class="form-label fw-bold">Subject *</label>
+                                    <select class="form-select" id="subject" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="services">Services Information</option>
+                                        <option value="consultation">Free Consultation</option>
+                                        <option value="emergency">Urgent Care Need</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label fw-bold">Message *</label>
+                                    <textarea class="form-control" id="message" rows="5" placeholder="Please tell us about your care needs and how we can help..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="consent" required>
+                                        <label class="form-check-label" for="consent">
+                                            I consent to being contacted by His Vision Healthcare Services regarding my inquiry. *
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Emergency Contact -->
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-5">
+                        <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-exclamation-triangle text-danger" style="font-size: 2rem;"></i>
+                        </div>
+                        <h3 class="fw-bold text-danger mb-3">Emergency Care Needed?</h3>
+                        <p class="lead mb-4">If you have an urgent care need or emergency situation, please call us immediately.</p>
+                        <a href="tel:4705588761" class="btn btn-danger btn-lg">
+                            <i class="fas fa-phone me-2"></i>Call Now: 470.558.8761
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-6 fw-bold text-primary text-center mb-5">Frequently Asked Questions</h2>
+                
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item border-0 shadow-sm mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                How quickly can care services begin?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We understand that care needs can be urgent. We work to begin services as quickly as possible, often within 24-48 hours of your initial consultation.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 shadow-sm mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                What areas do you serve?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We primarily serve Decatur, Georgia and the surrounding Atlanta metropolitan area. Contact us to confirm service availability in your specific location.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 shadow-sm mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Do you provide 24/7 care?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We offer flexible scheduling options to meet your family's needs, including overnight and 24/7 care arrangements when necessary.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 shadow-sm mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                How do you ensure quality of care?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                All our caregivers are thoroughly screened, trained, and supervised. We maintain regular communication with families and provide ongoing support to ensure the highest quality of care.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

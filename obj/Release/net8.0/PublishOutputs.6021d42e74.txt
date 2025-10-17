@@ -1,0 +1,12 @@
+C:\Users\Xavier\OneDrive\Test\HisVisionHCS.net\HisVisionHCS.Web\publish\HisVisionHCS.Web.exe
+C:\Users\Xavier\OneDrive\Test\HisVisionHCS.net\HisVisionHCS.Web\publish\publish\web.config
+C:\Users\Xavier\OneDrive\Test\HisVisionHCS.net\HisVisionHCS.Web\publish\appsettings.Development.json
+C:\Users\Xavier\OneDrive\Test\HisVisionHCS.net\HisVisionHCS.Web\publish\appsettings.json
+C:\Users\Xavier\OneDrive\Test\HisVisionHCS.net\HisVisionHCS.Web\publish\publish\appsettings.Development.json
+C:\Users\Xavier\OneDrive\Test\HisVisionHCS.net\HisVisionHCS.Web\publish\publish\appsettings.json
+C:\Users\Xavier\OneDrive\Test\HisVisionHCS.net\HisVisionHCS.Web\publish\publish\HisVisionHCS.Web.deps.json
+C:\Users\Xavier\OneDrive\Test\HisVisionHCS.net\HisVisionHCS.Web\publish\publish\HisVisionHCS.Web.runtimeconfig.json
+C:\Users\Xavier\OneDrive\Test\HisVisionHCS.net\HisVisionHCS.Web\publish\HisVisionHCS.Web.dll
+C:\Users\Xavier\OneDrive\Test\HisVisionHCS.net\HisVisionHCS.Web\publish\HisVisionHCS.Web.deps.json
+C:\Users\Xavier\OneDrive\Test\HisVisionHCS.net\HisVisionHCS.Web\publish\HisVisionHCS.Web.runtimeconfig.json
+C:\Users\Xavier\OneDrive\Test\HisVisionHCS.net\HisVisionHCS.Web\publish\HisVisionHCS.Web.pdb
