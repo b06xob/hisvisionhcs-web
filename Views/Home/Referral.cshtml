@@ -152,7 +152,8 @@
                 
                 <div class="card border-0 shadow-sm">
                     <div class="card-body p-5">
-                        <form>
+                        <form id="referralForm" method="post" action="/Forms/SubmitReferral">
+                            @Html.AntiForgeryToken()
                             <!-- Client Information -->
                             <div class="row mb-4">
                                 <div class="col-12">
@@ -162,23 +163,23 @@
                             <div class="row g-3 mb-4">
                                 <div class="col-md-6">
                                     <label for="clientFirstName" class="form-label">First Name *</label>
-                                    <input type="text" class="form-control" id="clientFirstName" required>
+                                    <input type="text" class="form-control" id="clientFirstName" name="ClientFirstName" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="clientLastName" class="form-label">Last Name *</label>
-                                    <input type="text" class="form-control" id="clientLastName" required>
+                                    <input type="text" class="form-control" id="clientLastName" name="ClientLastName" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="clientPhone" class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control" id="clientPhone">
+                                    <input type="tel" class="form-control" id="clientPhone" name="ClientPhone">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="clientEmail" class="form-label">Email Address</label>
-                                    <input type="email" class="form-control" id="clientEmail">
+                                    <input type="email" class="form-control" id="clientEmail" name="ClientEmail">
                                 </div>
                                 <div class="col-12">
                                     <label for="clientAddress" class="form-label">Address</label>
-                                    <textarea class="form-control" id="clientAddress" rows="2"></textarea>
+                                    <textarea class="form-control" id="clientAddress" name="ClientAddress" rows="2"></textarea>
                                 </div>
                             </div>
 
@@ -191,19 +192,19 @@
                             <div class="row g-3 mb-4">
                                 <div class="col-md-6">
                                     <label for="referrerName" class="form-label">Your Name *</label>
-                                    <input type="text" class="form-control" id="referrerName" required>
+                                    <input type="text" class="form-control" id="referrerName" name="ReferrerName" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="referrerTitle" class="form-label">Title/Organization</label>
-                                    <input type="text" class="form-control" id="referrerTitle">
+                                    <input type="text" class="form-control" id="referrerTitle" name="ReferrerTitle">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="referrerPhone" class="form-label">Phone Number *</label>
-                                    <input type="tel" class="form-control" id="referrerPhone" required>
+                                    <input type="tel" class="form-control" id="referrerPhone" name="ReferrerPhone" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="referrerEmail" class="form-label">Email Address *</label>
-                                    <input type="email" class="form-control" id="referrerEmail" required>
+                                    <input type="email" class="form-control" id="referrerEmail" name="ReferrerEmail" required>
                                 </div>
                             </div>
 
@@ -216,7 +217,7 @@
                             <div class="row g-3 mb-4">
                                 <div class="col-md-6">
                                     <label for="waiverType" class="form-label">Waiver Type</label>
-                                    <select class="form-select" id="waiverType">
+                                    <select class="form-select" id="waiverType" name="WaiverType">
                                         <option value="">Select Waiver Type</option>
                                         <option value="SOURCE">SOURCE</option>
                                         <option value="CCSP">CCSP</option>
@@ -227,7 +228,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="serviceNeeds" class="form-label">Primary Service Needs</label>
-                                    <select class="form-select" id="serviceNeeds">
+                                    <select class="form-select" id="serviceNeeds" name="ServiceNeeds">
                                         <option value="">Select Service Type</option>
                                         <option value="Companion Sitter">Companion Sitter</option>
                                         <option value="CNA Services">CNA Services</option>
@@ -237,7 +238,7 @@
                                 </div>
                                 <div class="col-12">
                                     <label for="additionalInfo" class="form-label">Additional Information</label>
-                                    <textarea class="form-control" id="additionalInfo" rows="4" placeholder="Please provide any additional details about the client's needs, medical conditions, or special requirements..."></textarea>
+                                    <textarea class="form-control" id="additionalInfo" name="AdditionalInfo" rows="4" placeholder="Please provide any additional details about the client's needs, medical conditions, or special requirements..."></textarea>
                                 </div>
                             </div>
 

@@ -242,27 +242,28 @@
                 
                 <div class="card border-0 shadow-sm">
                     <div class="card-body p-5">
-                        <form>
+                        <form id="contactForm" method="post" action="/Forms/SubmitContactMessage">
+                            @Html.AntiForgeryToken()
                             <div class="row g-3 mb-4">
                                 <div class="col-md-6">
                                     <label for="contactFirstName" class="form-label">First Name *</label>
-                                    <input type="text" class="form-control" id="contactFirstName" required>
+                                    <input type="text" class="form-control" id="contactFirstName" name="FirstName" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="contactLastName" class="form-label">Last Name *</label>
-                                    <input type="text" class="form-control" id="contactLastName" required>
+                                    <input type="text" class="form-control" id="contactLastName" name="LastName" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="contactPhone" class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control" id="contactPhone">
+                                    <input type="tel" class="form-control" id="contactPhone" name="Phone">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="contactEmail" class="form-label">Email Address *</label>
-                                    <input type="email" class="form-control" id="contactEmail" required>
+                                    <input type="email" class="form-control" id="contactEmail" name="Email" required>
                                 </div>
                                 <div class="col-12">
                                     <label for="contactSubject" class="form-label">Subject</label>
-                                    <select class="form-select" id="contactSubject">
+                                    <select class="form-select" id="contactSubject" name="Subject">
                                         <option value="">Select a topic</option>
                                         <option value="General Inquiry">General Inquiry</option>
                                         <option value="Service Information">Service Information</option>
@@ -274,7 +275,7 @@
                                 </div>
                                 <div class="col-12">
                                     <label for="contactMessage" class="form-label">Message *</label>
-                                    <textarea class="form-control" id="contactMessage" rows="5" placeholder="Please provide details about your inquiry..." required></textarea>
+                                    <textarea class="form-control" id="contactMessage" name="Message" rows="5" placeholder="Please provide details about your inquiry..." required></textarea>
                                 </div>
                             </div>
 

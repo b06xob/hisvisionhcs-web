@@ -165,7 +165,8 @@
                 
                 <div class="card border-0 shadow-sm">
                     <div class="card-body p-5">
-                        <form>
+                        <form id="careerForm" method="post" action="/Forms/SubmitCareerApplication">
+                            @Html.AntiForgeryToken()
                             <!-- Personal Information -->
                             <div class="row mb-4">
                                 <div class="col-12">
