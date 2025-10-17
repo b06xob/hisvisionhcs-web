@@ -30,6 +30,18 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult Careers()
+    {
+        ViewData["Title"] = "Careers";
+        return View();
+    }
+
+    public IActionResult Referral()
+    {
+        ViewData["Title"] = "Referral";
+        return View();
+    }
+
     public IActionResult Contact()
     {
         ViewData["Title"] = "Contact Us";
