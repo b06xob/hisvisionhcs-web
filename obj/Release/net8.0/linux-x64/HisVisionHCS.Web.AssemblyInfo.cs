@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HisVisionHCS.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fdbd296046a6c61ff03f13d7c6f83aa740374cc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1ede724d66e779be0b716242e8ee41c86cd147e")]
 [assembly: System.Reflection.AssemblyProductAttribute("HisVisionHCS.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HisVisionHCS.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
