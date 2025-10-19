@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Xavier\\OneDrive\\Test\\HisVisionHCS.net\\HisVisionHCS.Web\\wwwroot\\images\\VanessaHaynes.png",
+      "PackagePath": "staticwebassets\\images\\VanessaHaynes.png"
+    },
+    {
+      "Id": "C:\\Users\\Xavier\\OneDrive\\Test\\HisVisionHCS.net\\HisVisionHCS.Web\\wwwroot\\js\\forms.js",
+      "PackagePath": "staticwebassets\\js\\forms.js"
+    },
+    {
       "Id": "C:\\Users\\Xavier\\OneDrive\\Test\\HisVisionHCS.net\\HisVisionHCS.Web\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
