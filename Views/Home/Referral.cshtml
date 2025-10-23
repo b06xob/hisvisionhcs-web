@@ -242,6 +242,36 @@
                                 </div>
                             </div>
 
+                            <!-- Captcha Section -->
+                            <div class="row g-3 mb-4">
+                                <div class="col-12">
+                                    <div class="card border-primary">
+                                        <div class="card-body p-3">
+                                            <h6 class="card-title text-primary mb-3">
+                                                <i class="fas fa-shield-alt me-2"></i>Security Verification
+                                            </h6>
+                                            <div class="row align-items-center">
+                                                <div class="col-md-6">
+                                                    <label for="referralCaptchaQuestion" class="form-label">Security Question *</label>
+                                                    <div id="referralCaptchaQuestion" class="form-control-plaintext fw-bold text-primary"></div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="referralCaptchaAnswer" class="form-label">Your Answer *</label>
+                                                    <input type="number" class="form-control" id="referralCaptchaAnswer" name="captchaAnswer" required>
+                                                    <input type="hidden" id="referralCaptchaExpectedAnswer" name="captchaExpectedAnswer">
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label class="form-label">&nbsp;</label>
+                                                    <button type="button" class="btn btn-outline-secondary d-block w-100" id="referralRefreshCaptcha" title="Get new question">
+                                                        <i class="fas fa-sync-alt"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary btn-lg">
                                     <i class="fas fa-paper-plane me-2"></i>Submit Referral

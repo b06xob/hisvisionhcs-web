@@ -52,3 +52,5 @@ namespace HisVisionHCS.Web.Models
         public string Status { get; set; } = "New";
     }
 }
+
+

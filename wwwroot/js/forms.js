@@ -1,5 +1,19 @@
 // Form submission handling for His Vision Home Health website
 
+// Captcha functionality
+async function loadCaptcha(questionElementId, answerElementId, expectedAnswerElementId) {
+    try {
+        const response = await fetch('/Forms/GetCaptcha');
+        const data = await response.json();
+        
+        document.getElementById(questionElementId).textContent = data.question;
+        document.getElementById(expectedAnswerElementId).value = data.answer;
+        document.getElementById(answerElementId).value = '';
+    } catch (error) {
+        console.error('Error loading captcha:', error);
+    }
+}
+
 // Referral Form Handler
 document.addEventListener('DOMContentLoaded', function() {
     const referralForm = document.getElementById('referralForm');
@@ -8,6 +22,13 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             const formData = new FormData(this);
+            
+            // Add captcha data
+            const captchaAnswer = document.getElementById('referralCaptchaAnswer').value;
+            const captchaExpectedAnswer = document.getElementById('referralCaptchaExpectedAnswer').value;
+            formData.append('captchaAnswer', captchaAnswer);
+            formData.append('captchaExpectedAnswer', captchaExpectedAnswer);
+            
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.innerHTML;
             
@@ -70,6 +91,13 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             const formData = new FormData(this);
+            
+            // Add captcha data
+            const captchaAnswer = document.getElementById('careerCaptchaAnswer').value;
+            const captchaExpectedAnswer = document.getElementById('careerCaptchaExpectedAnswer').value;
+            formData.append('captchaAnswer', captchaAnswer);
+            formData.append('captchaExpectedAnswer', captchaExpectedAnswer);
+            
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.innerHTML;
             
@@ -132,6 +160,13 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             const formData = new FormData(this);
+            
+            // Add captcha data
+            const captchaAnswer = document.getElementById('contactCaptchaAnswer').value;
+            const captchaExpectedAnswer = document.getElementById('contactCaptchaExpectedAnswer').value;
+            formData.append('captchaAnswer', captchaAnswer);
+            formData.append('captchaExpectedAnswer', captchaExpectedAnswer);
+            
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.innerHTML;
             
@@ -186,4 +221,56 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Initialize captcha for all forms and set up refresh buttons
+    initializeCaptcha();
 });
+
+function initializeCaptcha() {
+    // Load initial captcha for each form
+    loadCaptcha('referralCaptchaQuestion', 'referralCaptchaAnswer', 'referralCaptchaExpectedAnswer');
+    loadCaptcha('careerCaptchaQuestion', 'careerCaptchaAnswer', 'careerCaptchaExpectedAnswer');
+    loadCaptcha('contactCaptchaQuestion', 'contactCaptchaAnswer', 'contactCaptchaExpectedAnswer');
+
+    // Set up refresh button handlers
+    const referralRefreshBtn = document.getElementById('referralRefreshCaptcha');
+    if (referralRefreshBtn) {
+        referralRefreshBtn.addEventListener('click', function() {
+            loadCaptcha('referralCaptchaQuestion', 'referralCaptchaAnswer', 'referralCaptchaExpectedAnswer');
+        });
+    }
+
+    const careerRefreshBtn = document.getElementById('careerRefreshCaptcha');
+    if (careerRefreshBtn) {
+        careerRefreshBtn.addEventListener('click', function() {
+            loadCaptcha('careerCaptchaQuestion', 'careerCaptchaAnswer', 'careerCaptchaExpectedAnswer');
+        });
+    }
+
+    const contactRefreshBtn = document.getElementById('contactRefreshCaptcha');
+    if (contactRefreshBtn) {
+        contactRefreshBtn.addEventListener('click', function() {
+            loadCaptcha('contactCaptchaQuestion', 'contactCaptchaAnswer', 'contactCaptchaExpectedAnswer');
+        });
+    }
+}
+
+// Add captcha refresh after successful form submissions
+document.addEventListener('DOMContentLoaded', function() {
+    // Override the form reset to also refresh captcha
+    const originalReset = HTMLFormElement.prototype.reset;
+    HTMLFormElement.prototype.reset = function() {
+        originalReset.call(this);
+        
+        // Refresh captcha based on form ID
+        if (this.id === 'referralForm') {
+            loadCaptcha('referralCaptchaQuestion', 'referralCaptchaAnswer', 'referralCaptchaExpectedAnswer');
+        } else if (this.id === 'careerForm') {
+            loadCaptcha('careerCaptchaQuestion', 'careerCaptchaAnswer', 'careerCaptchaExpectedAnswer');
+        } else if (this.id === 'contactForm') {
+            loadCaptcha('contactCaptchaQuestion', 'contactCaptchaAnswer', 'contactCaptchaExpectedAnswer');
+        }
+    };
+});
+
+

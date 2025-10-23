@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using HisVisionHCS.Web.Data;
+using HisVisionHCS.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,9 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 builder.Services.AddDbContext<HisVisionDbContext>(options =>
     options.UseSqlServer(connectionString));
+
+// Add Captcha Service
+builder.Services.AddScoped<ICaptchaService, CaptchaService>();
 
 var app = builder.Build();
 

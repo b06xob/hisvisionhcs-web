@@ -348,3 +348,4 @@ FodyWeavers.xsd
 # Azure deployment packages
 *.zip
 deploy*.zip
+

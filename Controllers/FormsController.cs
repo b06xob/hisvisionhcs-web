@@ -2,24 +2,40 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HisVisionHCS.Web.Data;
 using HisVisionHCS.Web.Models;
+using HisVisionHCS.Web.Services;
 
 namespace HisVisionHCS.Web.Controllers
 {
     public class FormsController : Controller
     {
         private readonly HisVisionDbContext _context;
+        private readonly ICaptchaService _captchaService;
 
-        public FormsController(HisVisionDbContext context)
+        public FormsController(HisVisionDbContext context, ICaptchaService captchaService)
         {
             _context = context;
+            _captchaService = captchaService;
+        }
+
+        [HttpGet]
+        public IActionResult GetCaptcha()
+        {
+            var captcha = _captchaService.GenerateQuestion();
+            return Json(new { question = captcha.Question, answer = captcha.Answer });
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SubmitReferral(Referral referral)
+        public async Task<IActionResult> SubmitReferral(Referral referral, string captchaAnswer, int captchaExpectedAnswer)
         {
             try
             {
+                // Validate captcha first
+                if (!_captchaService.ValidateAnswer(captchaAnswer, captchaExpectedAnswer))
+                {
+                    return Json(new { success = false, message = "Please solve the security question correctly." });
+                }
+
                 if (ModelState.IsValid)
                 {
                     referral.CreatedDate = DateTime.UtcNow;
@@ -43,10 +59,16 @@ namespace HisVisionHCS.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SubmitCareerApplication(CareerApplication application)
+        public async Task<IActionResult> SubmitCareerApplication(CareerApplication application, string captchaAnswer, int captchaExpectedAnswer)
         {
             try
             {
+                // Validate captcha first
+                if (!_captchaService.ValidateAnswer(captchaAnswer, captchaExpectedAnswer))
+                {
+                    return Json(new { success = false, message = "Please solve the security question correctly." });
+                }
+
                 if (ModelState.IsValid)
                 {
                     application.CreatedDate = DateTime.UtcNow;
@@ -70,10 +92,16 @@ namespace HisVisionHCS.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SubmitContactMessage(ContactMessage contactMessage)
+        public async Task<IActionResult> SubmitContactMessage(ContactMessage contactMessage, string captchaAnswer, int captchaExpectedAnswer)
         {
             try
             {
+                // Validate captcha first
+                if (!_captchaService.ValidateAnswer(captchaAnswer, captchaExpectedAnswer))
+                {
+                    return Json(new { success = false, message = "Please solve the security question correctly." });
+                }
+
                 if (ModelState.IsValid)
                 {
                     contactMessage.CreatedDate = DateTime.UtcNow;

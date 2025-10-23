@@ -47,3 +47,5 @@ namespace HisVisionHCS.Web.Data
         }
     }
 }
+
+
