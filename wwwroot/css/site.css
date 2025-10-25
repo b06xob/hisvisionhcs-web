@@ -198,6 +198,8 @@ section {
 #teamSlideshow {
   height: 100%;
   max-height: 600px;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 #teamSlideshow .carousel-inner {
@@ -209,6 +211,7 @@ section {
 #teamSlideshow .carousel-item {
   height: 100%;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 #teamSlideshow .carousel-control-prev-icon,
@@ -230,7 +233,11 @@ section {
   transition: all 0.3s ease;
   object-fit: cover;
   object-position: center;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
 }
 
 #teamSlideshow .carousel-item img:hover {
