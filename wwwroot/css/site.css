@@ -194,6 +194,19 @@ section {
   padding: 4rem 0;
 }
 
+/* Spacing for Hero Section Elements */
+.hero-logo-margin-bottom {
+  margin-bottom: 3rem !important; /* 48px - much more space after logo */
+}
+
+.hero-slogan-margin-bottom {
+  margin-bottom: 3rem !important; /* 48px - much more space after slogan */
+}
+
+.hero-buttons-margin-top {
+  margin-top: 2rem !important; /* 32px - more space before buttons */
+}
+
 /* Slideshow Styles */
 #teamSlideshow {
   height: 100%;
