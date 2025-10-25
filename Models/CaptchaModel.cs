@@ -21,3 +21,4 @@ namespace HisVisionHCS.Web.Models
         public int Answer { get; set; }
     }
 }
+
