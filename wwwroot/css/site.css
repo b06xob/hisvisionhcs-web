@@ -196,7 +196,15 @@ section {
 
 /* Slideshow Styles */
 #teamSlideshow {
-  min-height: 500px;
+  height: 100%;
+}
+
+#teamSlideshow .carousel-inner {
+  height: 100%;
+}
+
+#teamSlideshow .carousel-item {
+  height: 100%;
 }
 
 #teamSlideshow .carousel-control-prev-icon,
