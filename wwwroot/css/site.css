@@ -193,18 +193,6 @@ section {
   min-height: 500px;
 }
 
-#teamSlideshow .carousel-indicators {
-  bottom: -50px;
-}
-
-#teamSlideshow .carousel-indicators button {
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  width: 12px;
-  height: 12px;
-  margin: 0 5px;
-}
-
 #teamSlideshow .carousel-control-prev-icon,
 #teamSlideshow .carousel-control-next-icon {
   background-color: var(--primary-color);
