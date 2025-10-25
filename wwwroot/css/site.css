@@ -188,6 +188,37 @@ section {
   padding: 4rem 0;
 }
 
+/* Slideshow Styles */
+#teamSlideshow .carousel-indicators {
+  bottom: -50px;
+}
+
+#teamSlideshow .carousel-indicators button {
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+}
+
+#teamSlideshow .carousel-control-prev-icon,
+#teamSlideshow .carousel-control-next-icon {
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+#teamSlideshow .carousel-control-prev,
+#teamSlideshow .carousel-control-next {
+  width: 5%;
+}
+
+#teamSlideshow .carousel-item img {
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 @media (max-width: 768px) {
   section {
     padding: 2rem 0;
