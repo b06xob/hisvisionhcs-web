@@ -197,6 +197,7 @@ section {
 /* Slideshow Styles */
 #teamSlideshow {
   height: 100%;
+  max-height: 600px;
 }
 
 #teamSlideshow .carousel-inner {
