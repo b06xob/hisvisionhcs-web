@@ -90,6 +90,16 @@ body {
   border-radius: 15px;
 }
 
+/* Clickable card hover effects */
+a .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a:hover .card {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
