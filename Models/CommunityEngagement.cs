@@ -165,22 +165,6 @@ namespace HisVisionHCS.Web.Models
         [Display(Name = "Outcome/Feedback")]
         public string? FridayOutcome { get; set; }
 
-        // Engagement Details
-        [Display(Name = "Member's Response/Engagement")]
-        public string? MemberResponse { get; set; }
-
-        public string? Observations { get; set; }
-
-        [Display(Name = "Goals Achieved")]
-        public string? GoalsAchieved { get; set; }
-
-        // Follow-up
-        [Display(Name = "Follow-up Required")]
-        public bool FollowUpRequired { get; set; }
-
-        [Display(Name = "Follow-up Notes")]
-        public string? FollowUpNotes { get; set; }
-
         // Signatures
         [Display(Name = "Staff Signature")]
         public string? StaffSignature { get; set; }

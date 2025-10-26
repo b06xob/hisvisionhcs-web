@@ -96,9 +96,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/employees">← Employee Portal</a>
                     </li>
-                            <li class="nav-item">
+                    <li class="nav-item">
                                 <a class="nav-link active" href="/forms/communityengagement">Weekly Community Engagement</a>
-                            </li>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/forms/communityengagement/list">View Submissions</a>
                     </li>
@@ -158,7 +158,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                </div>
 
                     <!-- Saturday -->
                     <div class="card border-0 shadow-sm mb-4">
@@ -489,49 +489,6 @@ Member's Response:"></textarea>
                         </div>
                     </div>
 
-                    <!-- Engagement Details -->
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-header bg-primary text-white py-3">
-                            <h5 class="mb-0 fw-bold">Engagement Details</h5>
-                        </div>
-                        <div class="card-body p-4">
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <label asp-for="MemberResponse" class="form-label"></label>
-                                    <textarea asp-for="MemberResponse" class="form-control" rows="3"></textarea>
-                                    <span asp-validation-for="MemberResponse" class="text-danger"></span>
-                                </div>
-                                <div class="col-12">
-                                    <label asp-for="Observations" class="form-label"></label>
-                                    <textarea asp-for="Observations" class="form-control" rows="3"></textarea>
-                                    <span asp-validation-for="Observations" class="text-danger"></span>
-                                </div>
-                                <div class="col-12">
-                                    <label asp-for="GoalsAchieved" class="form-label"></label>
-                                    <textarea asp-for="GoalsAchieved" class="form-control" rows="3"></textarea>
-                                    <span asp-validation-for="GoalsAchieved" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Follow-up Information -->
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-header bg-primary text-white py-3">
-                            <h5 class="mb-0 fw-bold">Follow-up Information</h5>
-                        </div>
-                        <div class="card-body p-4">
-                            <div class="form-check mb-3">
-                                <input asp-for="FollowUpRequired" class="form-check-input" />
-                                <label asp-for="FollowUpRequired" class="form-check-label"></label>
-                            </div>
-                            <div class="col-12">
-                                <label asp-for="FollowUpNotes" class="form-label"></label>
-                                <textarea asp-for="FollowUpNotes" class="form-control" rows="3"></textarea>
-                                <span asp-validation-for="FollowUpNotes" class="text-danger"></span>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Signatures & Review -->
                     <div class="card border-0 shadow-sm mb-4">
