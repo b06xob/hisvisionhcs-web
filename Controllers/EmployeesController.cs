@@ -17,51 +17,26 @@ namespace HisVisionHCS.Web.Controllers
         // GET: /employees
         public IActionResult Index()
         {
-            try
+            var forms = new List<object>
             {
-                var forms = new List<object>
-                {
-                    new { 
-                        Id = 1, 
-                        Name = "Member Weekly Community Engagement Document", 
-                        Description = "Track member community engagement activities and outcomes",
-                        Action = "CommunityEngagement",
-                        Icon = "fas fa-users"
-                    }
-                    // Add more forms here as needed
-                };
+                new { 
+                    Id = 1, 
+                    Name = "Member Weekly Community Engagement Document", 
+                    Description = "Track member community engagement activities and outcomes",
+                    Action = "CommunityEngagement",
+                    Icon = "fas fa-users"
+                }
+                // Add more forms here as needed
+            };
 
-                return View(forms);
-            }
-            catch (Exception ex)
-            {
-                // Log the exception and return a simple view
-                return View(new List<object>
-                {
-                    new { 
-                        Id = 1, 
-                        Name = "Member Weekly Community Engagement Document", 
-                        Description = "Track member community engagement activities and outcomes",
-                        Action = "CommunityEngagement",
-                        Icon = "fas fa-users"
-                    }
-                });
-            }
+            return View(forms);
         }
 
         // GET: /employees/communityengagement
         public IActionResult CommunityEngagement()
         {
-            try
-            {
-                var model = new CommunityEngagement();
-                return View(model);
-            }
-            catch (Exception ex)
-            {
-                // Return a simple error view or redirect
-                return View(new CommunityEngagement());
-            }
+            var model = new CommunityEngagement();
+            return View(model);
         }
 
         // POST: /employees/communityengagement
