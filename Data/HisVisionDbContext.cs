@@ -52,7 +52,6 @@ namespace HisVisionHCS.Web.Data
                 entity.ToTable("CommunityEngagements");
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.CreatedAt).HasDefaultValueSql("GETUTCDATE()");
-                entity.Property(e => e.Date).HasDefaultValueSql("GETDATE()");
                 entity.Property(e => e.Status).HasDefaultValue("Draft");
             });
 

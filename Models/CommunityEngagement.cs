@@ -13,13 +13,17 @@ namespace HisVisionHCS.Web.Models
         public string MemberName { get; set; }
 
         [Required]
-        [Display(Name = "Member ID")]
-        public string MemberId { get; set; }
+        [Display(Name = "Member Phone Number")]
+        public string MemberPhoneNumber { get; set; }
+
+        // Caregiver Information
+        [Required]
+        [Display(Name = "Caregiver Name")]
+        public string CaregiverName { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
-        [Display(Name = "Date of Engagement")]
-        public DateTime Date { get; set; }
+        [Display(Name = "Caregiver Phone Number")]
+        public string CaregiverPhoneNumber { get; set; }
 
         // Staff Information
         [Required]

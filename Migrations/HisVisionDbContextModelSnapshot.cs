@@ -212,18 +212,13 @@ namespace HisVisionHCS.Web.Migrations
                     b.Property<string>("AdditionalComments")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GETUTCDATE()");
+                b.Property<DateTime>("CreatedAt")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("datetime2")
+                    .HasDefaultValueSql("GETUTCDATE()");
 
-                    b.Property<DateTime>("Date")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GETDATE()");
-
-                    b.Property<DateTime?>("DateSigned")
-                        .HasColumnType("datetime2");
+                b.Property<DateTime?>("DateSigned")
+                    .HasColumnType("datetime2");
 
                     b.Property<decimal?>("DurationHours")
                         .HasColumnType("decimal(18,2)");
@@ -240,13 +235,21 @@ namespace HisVisionHCS.Web.Migrations
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("MemberId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("MemberName")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("MemberName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("MemberPhoneNumber")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("CaregiverName")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("CaregiverPhoneNumber")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MemberResponse")
                         .HasColumnType("nvarchar(max)");

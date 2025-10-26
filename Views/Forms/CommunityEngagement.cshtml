@@ -1,6 +1,6 @@
 @model HisVisionHCS.Web.Models.CommunityEngagement
 @{
-    ViewData["Title"] = "Community Engagement Form";
+    ViewData["Title"] = "Weekly Community Engagement Form";
     Layout = null;
 }
 
@@ -96,9 +96,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/employees">← Employee Portal</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/forms/communityengagement">Community Engagement</a>
-                    </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/forms/communityengagement">Weekly Community Engagement</a>
+                            </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/forms/communityengagement/list">View Submissions</a>
                     </li>
@@ -116,7 +116,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="text-center mb-5">
-                    <h1 class="display-4 fw-bold text-primary">Community Engagement Form</h1>
+                    <h1 class="display-4 fw-bold text-primary">Weekly Community Engagement Form</h1>
                     <p class="lead">Complete the form below to document member community engagement activities</p>
                 </div>
 
@@ -142,14 +142,30 @@
                                     <span asp-validation-for="MemberName" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="MemberId" class="form-label"></label>
-                                    <input asp-for="MemberId" class="form-control" />
-                                    <span asp-validation-for="MemberId" class="text-danger"></span>
+                                    <label asp-for="MemberPhoneNumber" class="form-label"></label>
+                                    <input asp-for="MemberPhoneNumber" class="form-control" />
+                                    <span asp-validation-for="MemberPhoneNumber" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Caregiver Information -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white py-3">
+                            <h5 class="mb-0 fw-bold">Caregiver Information</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="CaregiverName" class="form-label"></label>
+                                    <input asp-for="CaregiverName" class="form-control" />
+                                    <span asp-validation-for="CaregiverName" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="Date" class="form-label"></label>
-                                    <input asp-for="Date" type="date" class="form-control" />
-                                    <span asp-validation-for="Date" class="text-danger"></span>
+                                    <label asp-for="CaregiverPhoneNumber" class="form-label"></label>
+                                    <input asp-for="CaregiverPhoneNumber" class="form-control" />
+                                    <span asp-validation-for="CaregiverPhoneNumber" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
