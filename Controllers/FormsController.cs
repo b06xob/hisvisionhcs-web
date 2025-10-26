@@ -11,11 +11,9 @@ namespace HisVisionHCS.Web.Controllers
             _logger = logger;
         }
 
-        // GET: /employees
-        public IActionResult Index()
-        {
-            ViewData["Title"] = "Employee Forms";
-            return View();
-        }
+        // Future form actions will go here
+        // GET: /forms/communityengagement
+        // GET: /forms/incidentreport
+        // etc.
     }
 }
