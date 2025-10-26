@@ -13,6 +13,7 @@ namespace HisVisionHCS.Web.Data
         public DbSet<Referral> Referrals { get; set; }
         public DbSet<CareerApplication> CareerApplications { get; set; }
         public DbSet<ContactMessage> ContactMessages { get; set; }
+        public DbSet<CommunityEngagement> CommunityEngagements { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -43,6 +44,15 @@ namespace HisVisionHCS.Web.Data
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.CreatedDate).HasDefaultValueSql("GETUTCDATE()");
                 entity.Property(e => e.Status).HasDefaultValue("New");
+            });
+
+            // Configure CommunityEngagements table
+            modelBuilder.Entity<CommunityEngagement>(entity =>
+            {
+                entity.ToTable("CommunityEngagements");
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.CreatedAt).HasDefaultValueSql("GETUTCDATE()");
+                entity.Property(e => e.Date).HasDefaultValueSql("GETDATE()");
             });
         }
     }

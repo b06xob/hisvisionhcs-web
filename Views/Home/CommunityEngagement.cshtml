@@ -1,0 +1,292 @@
+@model HisVisionHCS.Web.Models.CommunityEngagement
+@{
+    ViewData["Title"] = "Community Engagement Form";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - His Vision Healthcare Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8040C0;
+            --primary-dark: #5A2D8A;
+        }
+        .text-primary { color: var(--primary-color) !important; }
+        .btn-primary { 
+            background-color: var(--primary-color) !important; 
+            border-color: var(--primary-color) !important; 
+        }
+        .btn-primary:hover { 
+            background-color: var(--primary-dark) !important; 
+            border-color: var(--primary-dark) !important; 
+        }
+        .btn-outline-primary { 
+            color: var(--primary-color) !important; 
+            border-color: var(--primary-color) !important; 
+        }
+        .btn-outline-primary:hover { 
+            background-color: var(--primary-color) !important; 
+            border-color: var(--primary-color) !important; 
+            color: white !important;
+        }
+        .navbar-brand img { height: 40px; }
+        .navbar-nav .nav-link { color: white !important; font-weight: 500; }
+        .navbar-nav .nav-link:hover { color: #f8f9fa !important; }
+        .navbar-nav .nav-link.active { color: #f8f9fa !important; font-weight: 600; }
+        .navbar-nav .nav-link.disabled { color: #ccc !important; cursor: not-allowed; }
+        .navbar-nav .nav-link.disabled:hover { color: #ccc !important; }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--primary-color);">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="~/images/logo/HisVision_Logo.png" alt="His Vision Healthcare Services" class="me-2">
+                <span class="fw-bold">His Vision Healthcare Services</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">← Back to Main Site</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/employees">Forms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Calendar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Scheduling</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-outline-light btn-sm disabled" aria-disabled="true">
+                        <i class="fas fa-sign-in-alt me-1"></i>Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center mb-5">
+                    <h1 class="display-4 fw-bold text-primary">Community Engagement Form</h1>
+                    <p class="lead">Complete the form below to document member community engagement activities</p>
+                </div>
+
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        @TempData["SuccessMessage"]
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                }
+
+                <form asp-action="CommunityEngagement" method="post" class="needs-validation" novalidate>
+                    <!-- Member Information -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white py-3">
+                            <h5 class="mb-0 fw-bold">Member Information</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="MemberName" class="form-label"></label>
+                                    <input asp-for="MemberName" class="form-control" />
+                                    <span asp-validation-for="MemberName" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="MemberId" class="form-label"></label>
+                                    <input asp-for="MemberId" class="form-control" />
+                                    <span asp-validation-for="MemberId" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Date" class="form-label"></label>
+                                    <input asp-for="Date" type="date" class="form-control" />
+                                    <span asp-validation-for="Date" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Staff Information -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white py-3">
+                            <h5 class="mb-0 fw-bold">Staff Information</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="StaffName" class="form-label"></label>
+                                    <input asp-for="StaffName" class="form-control" />
+                                    <span asp-validation-for="StaffName" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="StaffId" class="form-label"></label>
+                                    <input asp-for="StaffId" class="form-control" />
+                                    <span asp-validation-for="StaffId" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity Information -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white py-3">
+                            <h5 class="mb-0 fw-bold">Activity Information</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="CommunityActivity" class="form-label"></label>
+                                    <input asp-for="CommunityActivity" class="form-control" />
+                                    <span asp-validation-for="CommunityActivity" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Location" class="form-label"></label>
+                                    <input asp-for="Location" class="form-control" />
+                                    <span asp-validation-for="Location" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="DurationHours" class="form-label"></label>
+                                    <input asp-for="DurationHours" type="number" step="0.1" class="form-control" />
+                                    <span asp-validation-for="DurationHours" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Participants" class="form-label"></label>
+                                    <input asp-for="Participants" class="form-control" />
+                                    <span asp-validation-for="Participants" class="text-danger"></span>
+                                </div>
+                                <div class="col-12">
+                                    <label asp-for="ActivityDescription" class="form-label"></label>
+                                    <textarea asp-for="ActivityDescription" class="form-control" rows="3"></textarea>
+                                    <span asp-validation-for="ActivityDescription" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Engagement Details -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white py-3">
+                            <h5 class="mb-0 fw-bold">Engagement Details</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label asp-for="MemberResponse" class="form-label"></label>
+                                    <textarea asp-for="MemberResponse" class="form-control" rows="3"></textarea>
+                                    <span asp-validation-for="MemberResponse" class="text-danger"></span>
+                                </div>
+                                <div class="col-12">
+                                    <label asp-for="Observations" class="form-label"></label>
+                                    <textarea asp-for="Observations" class="form-control" rows="3"></textarea>
+                                    <span asp-validation-for="Observations" class="text-danger"></span>
+                                </div>
+                                <div class="col-12">
+                                    <label asp-for="GoalsAchieved" class="form-label"></label>
+                                    <textarea asp-for="GoalsAchieved" class="form-control" rows="3"></textarea>
+                                    <span asp-validation-for="GoalsAchieved" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Follow-up Information -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white py-3">
+                            <h5 class="mb-0 fw-bold">Follow-up Information</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="form-check mb-3">
+                                <input asp-for="FollowUpRequired" class="form-check-input" />
+                                <label asp-for="FollowUpRequired" class="form-check-label"></label>
+                            </div>
+                            <div class="col-12">
+                                <label asp-for="FollowUpNotes" class="form-label"></label>
+                                <textarea asp-for="FollowUpNotes" class="form-control" rows="3"></textarea>
+                                <span asp-validation-for="FollowUpNotes" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Signatures & Review -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white py-3">
+                            <h5 class="mb-0 fw-bold">Signatures & Review</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="StaffSignature" class="form-label"></label>
+                                    <input asp-for="StaffSignature" class="form-control" />
+                                    <span asp-validation-for="StaffSignature" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="DateSigned" class="form-label"></label>
+                                    <input asp-for="DateSigned" type="date" class="form-control" />
+                                    <span asp-validation-for="DateSigned" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="SupervisorName" class="form-label"></label>
+                                    <input asp-for="SupervisorName" class="form-control" />
+                                    <span asp-validation-for="SupervisorName" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="SupervisorSignature" class="form-label"></label>
+                                    <input asp-for="SupervisorSignature" class="form-control" />
+                                    <span asp-validation-for="SupervisorSignature" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="SupervisorDate" class="form-label"></label>
+                                    <input asp-for="SupervisorDate" type="date" class="form-control" />
+                                    <span asp-validation-for="SupervisorDate" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check mt-4">
+                                        <input asp-for="SupervisorReview" class="form-check-input" />
+                                        <label asp-for="SupervisorReview" class="form-check-label"></label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label asp-for="AdditionalComments" class="form-label"></label>
+                                    <textarea asp-for="AdditionalComments" class="form-control" rows="3"></textarea>
+                                    <span asp-validation-for="AdditionalComments" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="/employees" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left me-2"></i>Back to Forms
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save me-2"></i>Submit Engagement
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
