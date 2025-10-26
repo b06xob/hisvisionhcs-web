@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "Employee Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold text-primary">Employee Forms</h1>
+                <p class="lead">Select a form to complete</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        @foreach (var form in Model)
+        {
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4 text-center">
+                        <div class="d-inline-flex align-items-center justify-content-center mb-3">
+                            <i class="@form.Icon text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-primary mb-3">@form.Name</h5>
+                        <p class="card-text mb-4">@form.Description</p>
+                        <a href="@Url.Action(form.Action)" class="btn btn-primary">
+                            <i class="fas fa-edit me-2"></i>Complete Form
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card border-0 bg-light">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-primary mb-3">Form Management</h5>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="@Url.Action("CommunityEngagementList")" class="btn btn-outline-primary">
+                            <i class="fas fa-list me-2"></i>View Community Engagement Forms
+                        </a>
+                        <a href="@Url.Action("CommunityEngagement")" class="btn btn-outline-primary">
+                            <i class="fas fa-plus me-2"></i>New Community Engagement Form
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
