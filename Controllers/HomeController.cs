@@ -57,22 +57,6 @@ public class HomeController : Controller
     public IActionResult Employees()
     {
         ViewData["Title"] = "Employee Forms";
-        var forms = new List<object>
-        {
-            new { 
-                Id = 1, 
-                Name = "Member Weekly Community Engagement Document", 
-                Description = "Track member community engagement activities and outcomes",
-                Action = "CommunityEngagement",
-                Icon = "fas fa-users"
-            }
-        };
-        return View(forms);
-    }
-
-    public IActionResult CommunityEngagement()
-    {
-        ViewData["Title"] = "Community Engagement Form";
         return View();
     }
 
