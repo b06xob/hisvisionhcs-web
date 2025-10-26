@@ -129,10 +129,10 @@
                 }
 
                 <form asp-action="CommunityEngagement" method="post" class="needs-validation" novalidate>
-                    <!-- Member Information -->
+                    <!-- Member Details -->
                     <div class="card border-0 shadow-sm mb-4">
                         <div class="card-header bg-primary text-white py-3">
-                            <h5 class="mb-0 fw-bold">Member Information</h5>
+                            <h5 class="mb-0 fw-bold">Member Details</h5>
                         </div>
                         <div class="card-body p-4">
                             <div class="row g-3">
@@ -146,17 +146,6 @@
                                     <input asp-for="MemberPhoneNumber" class="form-control" />
                                     <span asp-validation-for="MemberPhoneNumber" class="text-danger"></span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Caregiver Information -->
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-header bg-primary text-white py-3">
-                            <h5 class="mb-0 fw-bold">Caregiver Information</h5>
-                        </div>
-                        <div class="card-body p-4">
-                            <div class="row g-3">
                                 <div class="col-md-6">
                                     <label asp-for="CaregiverName" class="form-label"></label>
                                     <input asp-for="CaregiverName" class="form-control" />
@@ -166,27 +155,6 @@
                                     <label asp-for="CaregiverPhoneNumber" class="form-label"></label>
                                     <input asp-for="CaregiverPhoneNumber" class="form-control" />
                                     <span asp-validation-for="CaregiverPhoneNumber" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Staff Information -->
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-header bg-primary text-white py-3">
-                            <h5 class="mb-0 fw-bold">Staff Information</h5>
-                        </div>
-                        <div class="card-body p-4">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label asp-for="StaffName" class="form-label"></label>
-                                    <input asp-for="StaffName" class="form-control" />
-                                    <span asp-validation-for="StaffName" class="text-danger"></span>
-                                </div>
-                                <div class="col-md-6">
-                                    <label asp-for="StaffId" class="form-label"></label>
-                                    <input asp-for="StaffId" class="form-control" />
-                                    <span asp-validation-for="StaffId" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>

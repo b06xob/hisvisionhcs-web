@@ -25,15 +25,6 @@ namespace HisVisionHCS.Web.Models
         [Display(Name = "Caregiver Phone Number")]
         public string CaregiverPhoneNumber { get; set; }
 
-        // Staff Information
-        [Required]
-        [Display(Name = "Staff Name")]
-        public string StaffName { get; set; }
-
-        [Required]
-        [Display(Name = "Staff ID")]
-        public string StaffId { get; set; }
-
         // Activity Information
         [Display(Name = "Community Activity")]
         public string? CommunityActivity { get; set; }

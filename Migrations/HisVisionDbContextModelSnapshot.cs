@@ -260,14 +260,6 @@ namespace HisVisionHCS.Web.Migrations
                     b.Property<string>("Participants")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("StaffId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("StaffName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("StaffSignature")
                         .HasColumnType("nvarchar(max)");
 
