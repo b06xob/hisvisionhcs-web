@@ -54,18 +54,6 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Employees()
-    {
-        ViewData["Title"] = "Employee Forms";
-        return View();
-    }
-
-    // GET: /employees/communityengagement
-    public IActionResult CommunityEngagement()
-    {
-        ViewData["Title"] = "Community Engagement Form";
-        return View();
-    }
 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
