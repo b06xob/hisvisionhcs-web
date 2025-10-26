@@ -1,4 +1,3 @@
-@model HisVisionHCS.Web.Models.CommunityEngagement
 @{
     ViewData["Title"] = "Community Engagement Form";
     Layout = null;
@@ -34,6 +33,27 @@
             background-color: var(--primary-color) !important; 
             border-color: var(--primary-color) !important; 
             color: white !important;
+        }
+        .btn-outline-secondary {
+            color: var(--primary-color) !important;
+            border-color: var(--primary-color) !important;
+        }
+        .btn-outline-secondary:hover {
+            background-color: var(--primary-color) !important;
+            border-color: var(--primary-color) !important;
+            color: white !important;
+        }
+        .form-control:focus {
+            border-color: var(--primary-color) !important;
+            box-shadow: 0 0 0 0.2rem rgba(128, 64, 192, 0.25) !important;
+        }
+        .form-check-input:checked {
+            background-color: var(--primary-color) !important;
+            border-color: var(--primary-color) !important;
+        }
+        .form-check-input:focus {
+            border-color: var(--primary-color) !important;
+            box-shadow: 0 0 0 0.2rem rgba(128, 64, 192, 0.25) !important;
         }
         .navbar-brand img { height: 40px; }
         .navbar-nav .nav-link { color: white !important; font-weight: 500; }
@@ -88,15 +108,12 @@
                     <p class="lead">Complete the form below to document member community engagement activities</p>
                 </div>
 
-                @if (TempData["SuccessMessage"] != null)
-                {
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        @TempData["SuccessMessage"]
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                    </div>
-                }
+                <div class="alert alert-info" role="alert">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>Note:</strong> This is a preview of the Community Engagement form. Form submission is currently disabled for deployment testing.
+                </div>
 
-                <form asp-action="CommunityEngagement" method="post" class="needs-validation" novalidate>
+                <form action="#" method="post" class="needs-validation" novalidate>
                     <!-- Member Information -->
                     <div class="card border-0 shadow-sm mb-4">
                         <div class="card-header bg-primary text-white py-3">
@@ -105,19 +122,16 @@
                         <div class="card-body p-4">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label asp-for="MemberName" class="form-label"></label>
-                                    <input asp-for="MemberName" class="form-control" />
-                                    <span asp-validation-for="MemberName" class="text-danger"></span>
+                                    <label for="MemberName" class="form-label">Member Name *</label>
+                                    <input type="text" id="MemberName" name="MemberName" class="form-control" required />
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="MemberId" class="form-label"></label>
-                                    <input asp-for="MemberId" class="form-control" />
-                                    <span asp-validation-for="MemberId" class="text-danger"></span>
+                                    <label for="MemberId" class="form-label">Member ID *</label>
+                                    <input type="text" id="MemberId" name="MemberId" class="form-control" required />
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="Date" class="form-label"></label>
-                                    <input asp-for="Date" type="date" class="form-control" />
-                                    <span asp-validation-for="Date" class="text-danger"></span>
+                                    <label for="Date" class="form-label">Date of Engagement *</label>
+                                    <input type="date" id="Date" name="Date" class="form-control" required />
                                 </div>
                             </div>
                         </div>
@@ -131,14 +145,12 @@
                         <div class="card-body p-4">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label asp-for="StaffName" class="form-label"></label>
-                                    <input asp-for="StaffName" class="form-control" />
-                                    <span asp-validation-for="StaffName" class="text-danger"></span>
+                                    <label for="StaffName" class="form-label">Staff Name *</label>
+                                    <input type="text" id="StaffName" name="StaffName" class="form-control" required />
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="StaffId" class="form-label"></label>
-                                    <input asp-for="StaffId" class="form-control" />
-                                    <span asp-validation-for="StaffId" class="text-danger"></span>
+                                    <label for="StaffId" class="form-label">Staff ID *</label>
+                                    <input type="text" id="StaffId" name="StaffId" class="form-control" required />
                                 </div>
                             </div>
                         </div>
@@ -152,29 +164,24 @@
                         <div class="card-body p-4">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label asp-for="CommunityActivity" class="form-label"></label>
-                                    <input asp-for="CommunityActivity" class="form-control" />
-                                    <span asp-validation-for="CommunityActivity" class="text-danger"></span>
+                                    <label for="CommunityActivity" class="form-label">Community Activity</label>
+                                    <input type="text" id="CommunityActivity" name="CommunityActivity" class="form-control" />
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="Location" class="form-label"></label>
-                                    <input asp-for="Location" class="form-control" />
-                                    <span asp-validation-for="Location" class="text-danger"></span>
+                                    <label for="Location" class="form-label">Location</label>
+                                    <input type="text" id="Location" name="Location" class="form-control" />
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="DurationHours" class="form-label"></label>
-                                    <input asp-for="DurationHours" type="number" step="0.1" class="form-control" />
-                                    <span asp-validation-for="DurationHours" class="text-danger"></span>
+                                    <label for="DurationHours" class="form-label">Duration (Hours)</label>
+                                    <input type="number" id="DurationHours" name="DurationHours" step="0.1" class="form-control" />
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="Participants" class="form-label"></label>
-                                    <input asp-for="Participants" class="form-control" />
-                                    <span asp-validation-for="Participants" class="text-danger"></span>
+                                    <label for="Participants" class="form-label">Participants</label>
+                                    <input type="text" id="Participants" name="Participants" class="form-control" />
                                 </div>
                                 <div class="col-12">
-                                    <label asp-for="ActivityDescription" class="form-label"></label>
-                                    <textarea asp-for="ActivityDescription" class="form-control" rows="3"></textarea>
-                                    <span asp-validation-for="ActivityDescription" class="text-danger"></span>
+                                    <label for="ActivityDescription" class="form-label">Activity Description</label>
+                                    <textarea id="ActivityDescription" name="ActivityDescription" class="form-control" rows="3"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -188,19 +195,16 @@
                         <div class="card-body p-4">
                             <div class="row g-3">
                                 <div class="col-12">
-                                    <label asp-for="MemberResponse" class="form-label"></label>
-                                    <textarea asp-for="MemberResponse" class="form-control" rows="3"></textarea>
-                                    <span asp-validation-for="MemberResponse" class="text-danger"></span>
+                                    <label for="MemberResponse" class="form-label">Member's Response/Engagement</label>
+                                    <textarea id="MemberResponse" name="MemberResponse" class="form-control" rows="3"></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <label asp-for="Observations" class="form-label"></label>
-                                    <textarea asp-for="Observations" class="form-control" rows="3"></textarea>
-                                    <span asp-validation-for="Observations" class="text-danger"></span>
+                                    <label for="Observations" class="form-label">Observations</label>
+                                    <textarea id="Observations" name="Observations" class="form-control" rows="3"></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <label asp-for="GoalsAchieved" class="form-label"></label>
-                                    <textarea asp-for="GoalsAchieved" class="form-control" rows="3"></textarea>
-                                    <span asp-validation-for="GoalsAchieved" class="text-danger"></span>
+                                    <label for="GoalsAchieved" class="form-label">Goals Achieved</label>
+                                    <textarea id="GoalsAchieved" name="GoalsAchieved" class="form-control" rows="3"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -213,13 +217,12 @@
                         </div>
                         <div class="card-body p-4">
                             <div class="form-check mb-3">
-                                <input asp-for="FollowUpRequired" class="form-check-input" />
-                                <label asp-for="FollowUpRequired" class="form-check-label"></label>
+                                <input type="checkbox" id="FollowUpRequired" name="FollowUpRequired" class="form-check-input" />
+                                <label for="FollowUpRequired" class="form-check-label">Follow-up Required</label>
                             </div>
                             <div class="col-12">
-                                <label asp-for="FollowUpNotes" class="form-label"></label>
-                                <textarea asp-for="FollowUpNotes" class="form-control" rows="3"></textarea>
-                                <span asp-validation-for="FollowUpNotes" class="text-danger"></span>
+                                <label for="FollowUpNotes" class="form-label">Follow-up Notes</label>
+                                <textarea id="FollowUpNotes" name="FollowUpNotes" class="form-control" rows="3"></textarea>
                             </div>
                         </div>
                     </div>
@@ -232,40 +235,34 @@
                         <div class="card-body p-4">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label asp-for="StaffSignature" class="form-label"></label>
-                                    <input asp-for="StaffSignature" class="form-control" />
-                                    <span asp-validation-for="StaffSignature" class="text-danger"></span>
+                                    <label for="StaffSignature" class="form-label">Staff Signature</label>
+                                    <input type="text" id="StaffSignature" name="StaffSignature" class="form-control" />
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="DateSigned" class="form-label"></label>
-                                    <input asp-for="DateSigned" type="date" class="form-control" />
-                                    <span asp-validation-for="DateSigned" class="text-danger"></span>
+                                    <label for="DateSigned" class="form-label">Date Signed</label>
+                                    <input type="date" id="DateSigned" name="DateSigned" class="form-control" />
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="SupervisorName" class="form-label"></label>
-                                    <input asp-for="SupervisorName" class="form-control" />
-                                    <span asp-validation-for="SupervisorName" class="text-danger"></span>
+                                    <label for="SupervisorName" class="form-label">Supervisor Name</label>
+                                    <input type="text" id="SupervisorName" name="SupervisorName" class="form-control" />
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="SupervisorSignature" class="form-label"></label>
-                                    <input asp-for="SupervisorSignature" class="form-control" />
-                                    <span asp-validation-for="SupervisorSignature" class="text-danger"></span>
+                                    <label for="SupervisorSignature" class="form-label">Supervisor Signature</label>
+                                    <input type="text" id="SupervisorSignature" name="SupervisorSignature" class="form-control" />
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="SupervisorDate" class="form-label"></label>
-                                    <input asp-for="SupervisorDate" type="date" class="form-control" />
-                                    <span asp-validation-for="SupervisorDate" class="text-danger"></span>
+                                    <label for="SupervisorDate" class="form-label">Supervisor Review Date</label>
+                                    <input type="date" id="SupervisorDate" name="SupervisorDate" class="form-control" />
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-check mt-4">
-                                        <input asp-for="SupervisorReview" class="form-check-input" />
-                                        <label asp-for="SupervisorReview" class="form-check-label"></label>
+                                        <input type="checkbox" id="SupervisorReview" name="SupervisorReview" class="form-check-input" />
+                                        <label for="SupervisorReview" class="form-check-label">Supervisor Review Completed</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <label asp-for="AdditionalComments" class="form-label"></label>
-                                    <textarea asp-for="AdditionalComments" class="form-control" rows="3"></textarea>
-                                    <span asp-validation-for="AdditionalComments" class="text-danger"></span>
+                                    <label for="AdditionalComments" class="form-label">Additional Comments</label>
+                                    <textarea id="AdditionalComments" name="AdditionalComments" class="form-control" rows="3"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -275,7 +272,7 @@
                         <a href="/employees" class="btn btn-outline-secondary">
                             <i class="fas fa-arrow-left me-2"></i>Back to Forms
                         </a>
-                        <button type="submit" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" onclick="alert('Form submission is currently disabled for deployment testing.')">
                             <i class="fas fa-save me-2"></i>Submit Engagement
                         </button>
                     </div>
@@ -286,7 +283,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation/1.19.3/jquery.validate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
 </body>
 </html>

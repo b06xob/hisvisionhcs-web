@@ -1,20 +1,16 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using HisVisionHCS.Web.Models;
-using HisVisionHCS.Web.Data;
-using Microsoft.EntityFrameworkCore;
 
 namespace HisVisionHCS.Web.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly HisVisionDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger, HisVisionDbContext context)
+    public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
-        _context = context;
     }
 
     public IActionResult Index()
@@ -68,34 +64,7 @@ public class HomeController : Controller
     public IActionResult CommunityEngagement()
     {
         ViewData["Title"] = "Community Engagement Form";
-        var model = new CommunityEngagement();
-        return View(model);
-    }
-
-    // POST: /employees/communityengagement
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> CommunityEngagement(CommunityEngagement model)
-    {
-        if (ModelState.IsValid)
-        {
-            try
-            {
-                model.CreatedAt = DateTime.Now;
-                _context.CommunityEngagements.Add(model);
-                await _context.SaveChangesAsync();
-
-                TempData["SuccessMessage"] = "Community engagement form submitted successfully!";
-                return RedirectToAction(nameof(CommunityEngagement));
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError("", "An error occurred while saving the form. Please try again.");
-            }
-        }
-
-        ViewData["Title"] = "Community Engagement Form";
-        return View(model);
+        return View();
     }
 
 
