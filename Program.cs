@@ -47,6 +47,16 @@ app.MapControllerRoute(
     pattern: "employees",
     defaults: new { controller = "Employees", action = "Index" });
 
+app.MapControllerRoute(
+    name: "forms-communityengagement",
+    pattern: "forms/communityengagement",
+    defaults: new { controller = "Forms", action = "CommunityEngagement" });
+
+app.MapControllerRoute(
+    name: "forms-communityengagement-list",
+    pattern: "forms/communityengagement/list",
+    defaults: new { controller = "Forms", action = "CommunityEngagementList" });
+
 
 app.MapControllerRoute(
     name: "default",
