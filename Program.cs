@@ -39,10 +39,6 @@ app.MapControllerRoute(
     pattern: "employees",
     defaults: new { controller = "Home", action = "Employees" });
 
-app.MapControllerRoute(
-    name: "test",
-    pattern: "test",
-    defaults: new { controller = "Home", action = "Test" });
 
 app.MapControllerRoute(
     name: "default",

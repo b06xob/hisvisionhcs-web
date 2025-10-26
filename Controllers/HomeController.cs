@@ -15,7 +15,6 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        ViewData["Title"] = "Home - Updated " + DateTime.Now.ToString("HH:mm:ss");
         return View();
     }
 
@@ -61,10 +60,6 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Test()
-    {
-        return Content("Test page is working!");
-    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
