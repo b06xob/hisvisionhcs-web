@@ -26,18 +26,23 @@ namespace HisVisionHCS.Web.Models
         public string CaregiverPhoneNumber { get; set; }
 
         // Activity Information
-        [Display(Name = "Community Activity")]
+        [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "Saturday Date")]
+        public DateTime SaturdayDate { get; set; }
+
+        [Display(Name = "Activity/Event")]
         public string? CommunityActivity { get; set; }
 
         public string? Location { get; set; }
 
-        [Display(Name = "Duration (Hours)")]
-        [Range(0.1, 24.0, ErrorMessage = "Duration must be between 0.1 and 24 hours.")]
-        public decimal? DurationHours { get; set; }
+        [Display(Name = "Transportation Provided")]
+        public bool TransportationProvided { get; set; }
 
+        [Display(Name = "Staff Support")]
         public string? Participants { get; set; }
 
-        [Display(Name = "Activity Description")]
+        [Display(Name = "Outcome/Feedback")]
         public string? ActivityDescription { get; set; }
 
         // Engagement Details

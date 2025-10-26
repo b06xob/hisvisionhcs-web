@@ -220,20 +220,35 @@ namespace HisVisionHCS.Web.Migrations
                 b.Property<DateTime?>("DateSigned")
                     .HasColumnType("datetime2");
 
-                    b.Property<decimal?>("DurationHours")
-                        .HasColumnType("decimal(18,2)");
+                b.Property<string>("Status")
+                    .IsRequired()
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("nvarchar(max)")
+                    .HasDefaultValue("Draft");
 
-                    b.Property<bool>("FollowUpRequired")
+                b.Property<bool>("TransportationProvided")
+                    .HasColumnType("bit");
+
+                    b.Property<DateTime?>("SupervisorDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SupervisorName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SupervisorSignature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("SupervisorReview")
                         .HasColumnType("bit");
 
-                    b.Property<string>("FollowUpNotes")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("GoalsAchieved")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("CommunityActivity")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Location")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("Location")
+                    .HasColumnType("nvarchar(max)");
 
                 b.Property<string>("MemberName")
                     .IsRequired()
@@ -251,41 +266,20 @@ namespace HisVisionHCS.Web.Migrations
                     .IsRequired()
                     .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("MemberResponse")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("MemberResponse")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Observations")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("Observations")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Participants")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("Participants")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("StaffSignature")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<DateTime>("SaturdayDate")
+                    .HasColumnType("datetime2");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(max)")
-                        .HasDefaultValue("Draft");
-
-                    b.Property<DateTime?>("SupervisorDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("SupervisorName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SupervisorSignature")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("SupervisorReview")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CommunityActivity")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("StaffSignature")
+                    .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
