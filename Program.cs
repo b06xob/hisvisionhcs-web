@@ -7,12 +7,20 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Add Entity Framework
+// Add Entity Framework with resilient configuration
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
     ?? "Server=hisvision-sql-server.database.windows.net;Database=HisVisionDB;User Id=sqladmin;Password=HisVision2025!;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
 builder.Services.AddDbContext<HisVisionDbContext>(options =>
-    options.UseSqlServer(connectionString));
+{
+    options.UseSqlServer(connectionString, sqlOptions =>
+    {
+        sqlOptions.EnableRetryOnFailure(maxRetryCount: 3, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
+    });
+    // Disable automatic migrations and schema validation
+    options.EnableSensitiveDataLogging(false);
+    options.EnableServiceProviderCaching();
+});
 
 // Add Captcha Service
 builder.Services.AddScoped<ICaptchaService, CaptchaService>();
