@@ -45,12 +45,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "employees",
     pattern: "employees",
-    defaults: new { controller = "Forms", action = "Index" });
-
-app.MapControllerRoute(
-    name: "communityengagement",
-    pattern: "employees/communityengagement",
-    defaults: new { controller = "Forms", action = "CommunityEngagement" });
+    defaults: new { controller = "Home", action = "Employees" });
 
 
 app.MapControllerRoute(
