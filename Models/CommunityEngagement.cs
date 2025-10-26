@@ -166,30 +166,15 @@ namespace HisVisionHCS.Web.Models
         public string? FridayOutcome { get; set; }
 
         // Signatures
+        [Display(Name = "Staff Name")]
+        public string? StaffName { get; set; }
+
         [Display(Name = "Staff Signature")]
         public string? StaffSignature { get; set; }
 
         [DataType(DataType.Date)]
         [Display(Name = "Date Signed")]
         public DateTime? DateSigned { get; set; }
-
-        // Supervisor Review
-        [Display(Name = "Supervisor Name")]
-        public string? SupervisorName { get; set; }
-
-        [Display(Name = "Supervisor Signature")]
-        public string? SupervisorSignature { get; set; }
-
-        [DataType(DataType.Date)]
-        [Display(Name = "Supervisor Review Date")]
-        public DateTime? SupervisorDate { get; set; }
-
-        [Display(Name = "Supervisor Review Completed")]
-        public bool SupervisorReview { get; set; }
-
-        // Additional Comments
-        [Display(Name = "Additional Comments")]
-        public string? AdditionalComments { get; set; }
 
         // Audit Fields
         public DateTime CreatedAt { get; set; }

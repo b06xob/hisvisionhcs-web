@@ -498,6 +498,11 @@ Member's Response:"></textarea>
                         <div class="card-body p-4">
                             <div class="row g-3">
                                 <div class="col-md-6">
+                                    <label asp-for="StaffName" class="form-label"></label>
+                                    <input asp-for="StaffName" class="form-control" />
+                                    <span asp-validation-for="StaffName" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
                                     <label asp-for="StaffSignature" class="form-label"></label>
                                     <input asp-for="StaffSignature" class="form-control" />
                                     <span asp-validation-for="StaffSignature" class="text-danger"></span>
@@ -506,32 +511,6 @@ Member's Response:"></textarea>
                                     <label asp-for="DateSigned" class="form-label"></label>
                                     <input asp-for="DateSigned" type="date" class="form-control" />
                                     <span asp-validation-for="DateSigned" class="text-danger"></span>
-                                </div>
-                                <div class="col-md-6">
-                                    <label asp-for="SupervisorName" class="form-label"></label>
-                                    <input asp-for="SupervisorName" class="form-control" />
-                                    <span asp-validation-for="SupervisorName" class="text-danger"></span>
-                                </div>
-                                <div class="col-md-6">
-                                    <label asp-for="SupervisorSignature" class="form-label"></label>
-                                    <input asp-for="SupervisorSignature" class="form-control" />
-                                    <span asp-validation-for="SupervisorSignature" class="text-danger"></span>
-                                </div>
-                                <div class="col-md-6">
-                                    <label asp-for="SupervisorDate" class="form-label"></label>
-                                    <input asp-for="SupervisorDate" type="date" class="form-control" />
-                                    <span asp-validation-for="SupervisorDate" class="text-danger"></span>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-check mt-4">
-                                        <input asp-for="SupervisorReview" class="form-check-input" />
-                                        <label asp-for="SupervisorReview" class="form-check-label"></label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <label asp-for="AdditionalComments" class="form-label"></label>
-                                    <textarea asp-for="AdditionalComments" class="form-control" rows="3"></textarea>
-                                    <span asp-validation-for="AdditionalComments" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
