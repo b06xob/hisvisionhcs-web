@@ -179,26 +179,290 @@
                         <div class="card-body p-4">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label asp-for="CommunityActivity" class="form-label"></label>
-                                    <input asp-for="CommunityActivity" class="form-control" />
+                                    <label asp-for="SaturdayActivity" class="form-label"></label>
+                                    <input asp-for="SaturdayActivity" class="form-control" />
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="Location" class="form-label">Location</label>
-                                    <input asp-for="Location" class="form-control" />
+                                    <label asp-for="SaturdayLocation" class="form-label">Location</label>
+                                    <input asp-for="SaturdayLocation" class="form-control" />
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-check mt-4">
-                                        <input asp-for="TransportationProvided" class="form-check-input" type="checkbox" />
-                                        <label asp-for="TransportationProvided" class="form-check-label"></label>
+                                        <input asp-for="SaturdayTransportationProvided" class="form-check-input" type="checkbox" />
+                                        <label asp-for="SaturdayTransportationProvided" class="form-check-label"></label>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <label asp-for="Participants" class="form-label"></label>
-                                    <textarea asp-for="Participants" class="form-control" rows="2"></textarea>
+                                    <label asp-for="SaturdayStaffSupport" class="form-label"></label>
+                                    <textarea asp-for="SaturdayStaffSupport" class="form-control" rows="2"></textarea>
                                 </div>
                                 <div class="col-md-12">
-                                    <label asp-for="ActivityDescription" class="form-label"></label>
-                                    <textarea asp-for="ActivityDescription" class="form-control" rows="3"></textarea>
+                                    <label asp-for="SaturdayOutcome" class="form-label"></label>
+                                    <textarea asp-for="SaturdayOutcome" class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sunday -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white py-3">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <h5 class="mb-0 fw-bold">Sunday</h5>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <label asp-for="SundayDate" class="form-label text-white mb-0 me-2"></label>
+                                        <input asp-for="SundayDate" type="date" class="form-control form-control-sm" style="max-width: 200px;" />
+                                    </div>
+                                    <span asp-validation-for="SundayDate" class="text-warning small"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="SundayActivity" class="form-label"></label>
+                                    <input asp-for="SundayActivity" class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="SundayLocation" class="form-label">Location</label>
+                                    <input asp-for="SundayLocation" class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check mt-4">
+                                        <input asp-for="SundayTransportationProvided" class="form-check-input" type="checkbox" />
+                                        <label asp-for="SundayTransportationProvided" class="form-check-label"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label asp-for="SundayStaffSupport" class="form-label"></label>
+                                    <textarea asp-for="SundayStaffSupport" class="form-control" rows="2"></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <label asp-for="SundayOutcome" class="form-label"></label>
+                                    <textarea asp-for="SundayOutcome" class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monday -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white py-3">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <h5 class="mb-0 fw-bold">Monday</h5>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <label asp-for="MondayDate" class="form-label text-white mb-0 me-2"></label>
+                                        <input asp-for="MondayDate" type="date" class="form-control form-control-sm" style="max-width: 200px;" />
+                                    </div>
+                                    <span asp-validation-for="MondayDate" class="text-warning small"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="MondayActivity" class="form-label"></label>
+                                    <input asp-for="MondayActivity" class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="MondayLocation" class="form-label">Location</label>
+                                    <input asp-for="MondayLocation" class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check mt-4">
+                                        <input asp-for="MondayTransportationProvided" class="form-check-input" type="checkbox" />
+                                        <label asp-for="MondayTransportationProvided" class="form-check-label"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label asp-for="MondayStaffSupport" class="form-label"></label>
+                                    <textarea asp-for="MondayStaffSupport" class="form-control" rows="2"></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <label asp-for="MondayOutcome" class="form-label"></label>
+                                    <textarea asp-for="MondayOutcome" class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tuesday -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white py-3">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <h5 class="mb-0 fw-bold">Tuesday</h5>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <label asp-for="TuesdayDate" class="form-label text-white mb-0 me-2"></label>
+                                        <input asp-for="TuesdayDate" type="date" class="form-control form-control-sm" style="max-width: 200px;" />
+                                    </div>
+                                    <span asp-validation-for="TuesdayDate" class="text-warning small"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="TuesdayActivity" class="form-label"></label>
+                                    <input asp-for="TuesdayActivity" class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="TuesdayLocation" class="form-label">Location</label>
+                                    <input asp-for="TuesdayLocation" class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check mt-4">
+                                        <input asp-for="TuesdayTransportationProvided" class="form-check-input" type="checkbox" />
+                                        <label asp-for="TuesdayTransportationProvided" class="form-check-label"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label asp-for="TuesdayStaffSupport" class="form-label"></label>
+                                    <textarea asp-for="TuesdayStaffSupport" class="form-control" rows="2"></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <label asp-for="TuesdayOutcome" class="form-label"></label>
+                                    <textarea asp-for="TuesdayOutcome" class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wednesday -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white py-3">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <h5 class="mb-0 fw-bold">Wednesday</h5>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <label asp-for="WednesdayDate" class="form-label text-white mb-0 me-2"></label>
+                                        <input asp-for="WednesdayDate" type="date" class="form-control form-control-sm" style="max-width: 200px;" />
+                                    </div>
+                                    <span asp-validation-for="WednesdayDate" class="text-warning small"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="WednesdayActivity" class="form-label"></label>
+                                    <input asp-for="WednesdayActivity" class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="WednesdayLocation" class="form-label">Location</label>
+                                    <input asp-for="WednesdayLocation" class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check mt-4">
+                                        <input asp-for="WednesdayTransportationProvided" class="form-check-input" type="checkbox" />
+                                        <label asp-for="WednesdayTransportationProvided" class="form-check-label"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label asp-for="WednesdayStaffSupport" class="form-label"></label>
+                                    <textarea asp-for="WednesdayStaffSupport" class="form-control" rows="2"></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <label asp-for="WednesdayOutcome" class="form-label"></label>
+                                    <textarea asp-for="WednesdayOutcome" class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thursday -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white py-3">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <h5 class="mb-0 fw-bold">Thursday</h5>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <label asp-for="ThursdayDate" class="form-label text-white mb-0 me-2"></label>
+                                        <input asp-for="ThursdayDate" type="date" class="form-control form-control-sm" style="max-width: 200px;" />
+                                    </div>
+                                    <span asp-validation-for="ThursdayDate" class="text-warning small"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="ThursdayActivity" class="form-label"></label>
+                                    <input asp-for="ThursdayActivity" class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="ThursdayLocation" class="form-label">Location</label>
+                                    <input asp-for="ThursdayLocation" class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check mt-4">
+                                        <input asp-for="ThursdayTransportationProvided" class="form-check-input" type="checkbox" />
+                                        <label asp-for="ThursdayTransportationProvided" class="form-check-label"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label asp-for="ThursdayStaffSupport" class="form-label"></label>
+                                    <textarea asp-for="ThursdayStaffSupport" class="form-control" rows="2"></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <label asp-for="ThursdayOutcome" class="form-label"></label>
+                                    <textarea asp-for="ThursdayOutcome" class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Friday -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white py-3">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <h5 class="mb-0 fw-bold">Friday</h5>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <label asp-for="FridayDate" class="form-label text-white mb-0 me-2"></label>
+                                        <input asp-for="FridayDate" type="date" class="form-control form-control-sm" style="max-width: 200px;" />
+                                    </div>
+                                    <span asp-validation-for="FridayDate" class="text-warning small"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="FridayActivity" class="form-label"></label>
+                                    <input asp-for="FridayActivity" class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="FridayLocation" class="form-label">Location</label>
+                                    <input asp-for="FridayLocation" class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check mt-4">
+                                        <input asp-for="FridayTransportationProvided" class="form-check-input" type="checkbox" />
+                                        <label asp-for="FridayTransportationProvided" class="form-check-label"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label asp-for="FridayStaffSupport" class="form-label"></label>
+                                    <textarea asp-for="FridayStaffSupport" class="form-control" rows="2"></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <label asp-for="FridayOutcome" class="form-label"></label>
+                                    <textarea asp-for="FridayOutcome" class="form-control" rows="3"></textarea>
                                 </div>
                             </div>
                         </div>

@@ -25,25 +25,145 @@ namespace HisVisionHCS.Web.Models
         [Display(Name = "Caregiver Phone Number")]
         public string CaregiverPhoneNumber { get; set; }
 
-        // Activity Information
+        // Weekly Activity Information
         [Required]
         [DataType(DataType.Date)]
         [Display(Name = "Saturday Date")]
         public DateTime SaturdayDate { get; set; }
 
         [Display(Name = "Activity/Event")]
-        public string? CommunityActivity { get; set; }
+        public string? SaturdayActivity { get; set; }
 
-        public string? Location { get; set; }
+        public string? SaturdayLocation { get; set; }
 
         [Display(Name = "Transportation Provided")]
-        public bool TransportationProvided { get; set; }
+        public bool SaturdayTransportationProvided { get; set; }
 
         [Display(Name = "Staff Support")]
-        public string? Participants { get; set; }
+        public string? SaturdayStaffSupport { get; set; }
 
         [Display(Name = "Outcome/Feedback")]
-        public string? ActivityDescription { get; set; }
+        public string? SaturdayOutcome { get; set; }
+
+        // Sunday
+        [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "Sunday Date")]
+        public DateTime SundayDate { get; set; }
+
+        [Display(Name = "Activity/Event")]
+        public string? SundayActivity { get; set; }
+
+        public string? SundayLocation { get; set; }
+
+        [Display(Name = "Transportation Provided")]
+        public bool SundayTransportationProvided { get; set; }
+
+        [Display(Name = "Staff Support")]
+        public string? SundayStaffSupport { get; set; }
+
+        [Display(Name = "Outcome/Feedback")]
+        public string? SundayOutcome { get; set; }
+
+        // Monday
+        [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "Monday Date")]
+        public DateTime MondayDate { get; set; }
+
+        [Display(Name = "Activity/Event")]
+        public string? MondayActivity { get; set; }
+
+        public string? MondayLocation { get; set; }
+
+        [Display(Name = "Transportation Provided")]
+        public bool MondayTransportationProvided { get; set; }
+
+        [Display(Name = "Staff Support")]
+        public string? MondayStaffSupport { get; set; }
+
+        [Display(Name = "Outcome/Feedback")]
+        public string? MondayOutcome { get; set; }
+
+        // Tuesday
+        [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "Tuesday Date")]
+        public DateTime TuesdayDate { get; set; }
+
+        [Display(Name = "Activity/Event")]
+        public string? TuesdayActivity { get; set; }
+
+        public string? TuesdayLocation { get; set; }
+
+        [Display(Name = "Transportation Provided")]
+        public bool TuesdayTransportationProvided { get; set; }
+
+        [Display(Name = "Staff Support")]
+        public string? TuesdayStaffSupport { get; set; }
+
+        [Display(Name = "Outcome/Feedback")]
+        public string? TuesdayOutcome { get; set; }
+
+        // Wednesday
+        [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "Wednesday Date")]
+        public DateTime WednesdayDate { get; set; }
+
+        [Display(Name = "Activity/Event")]
+        public string? WednesdayActivity { get; set; }
+
+        public string? WednesdayLocation { get; set; }
+
+        [Display(Name = "Transportation Provided")]
+        public bool WednesdayTransportationProvided { get; set; }
+
+        [Display(Name = "Staff Support")]
+        public string? WednesdayStaffSupport { get; set; }
+
+        [Display(Name = "Outcome/Feedback")]
+        public string? WednesdayOutcome { get; set; }
+
+        // Thursday
+        [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "Thursday Date")]
+        public DateTime ThursdayDate { get; set; }
+
+        [Display(Name = "Activity/Event")]
+        public string? ThursdayActivity { get; set; }
+
+        public string? ThursdayLocation { get; set; }
+
+        [Display(Name = "Transportation Provided")]
+        public bool ThursdayTransportationProvided { get; set; }
+
+        [Display(Name = "Staff Support")]
+        public string? ThursdayStaffSupport { get; set; }
+
+        [Display(Name = "Outcome/Feedback")]
+        public string? ThursdayOutcome { get; set; }
+
+        // Friday
+        [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "Friday Date")]
+        public DateTime FridayDate { get; set; }
+
+        [Display(Name = "Activity/Event")]
+        public string? FridayActivity { get; set; }
+
+        public string? FridayLocation { get; set; }
+
+        [Display(Name = "Transportation Provided")]
+        public bool FridayTransportationProvided { get; set; }
+
+        [Display(Name = "Staff Support")]
+        public string? FridayStaffSupport { get; set; }
+
+        [Display(Name = "Outcome/Feedback")]
+        public string? FridayOutcome { get; set; }
 
         // Engagement Details
         [Display(Name = "Member's Response/Engagement")]
