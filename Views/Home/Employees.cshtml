@@ -20,6 +20,8 @@
         .navbar-nav .nav-link { color: white !important; font-weight: 500; }
         .navbar-nav .nav-link:hover { color: #f8f9fa !important; }
         .navbar-nav .nav-link.active { color: #f8f9fa !important; font-weight: 600; }
+        .navbar-nav .nav-link.disabled { color: #ccc !important; cursor: not-allowed; }
+        .navbar-nav .nav-link.disabled:hover { color: #ccc !important; }
     </style>
 </head>
 <body>
@@ -38,22 +40,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/">← Back to Main Site</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Home/About">About</a>
+                        <a class="nav-link active" href="/employees">Forms Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Home/Services">Services</a>
+                        <a class="nav-link" href="#" class="disabled">Community Engagement</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Home/Careers">Careers</a>
+                        <a class="nav-link" href="#" class="disabled">Incident Reports</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Home/Contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/employees">Forms</a>
+                        <a class="nav-link" href="#" class="disabled">Time Sheets</a>
                     </li>
                 </ul>
             </div>
